@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject gameOverCanvas;
     public GameObject inGameCanvas;
     public TextMeshProUGUI finalScoreText;
+    public Animator marioAnimator;
     // other methods
 
     public void RestartButtonCallback(int input)
@@ -54,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
         Application.targetFrameRate = 30;
         marioBody = GetComponent<Rigidbody2D>();
         marioSprite = GetComponent<SpriteRenderer>();
-
+        marioAnimator.SetBool("onGround", onGroundState);
     }
 
     // Update is called once per frame
@@ -64,14 +65,18 @@ public class PlayerMovement : MonoBehaviour
         {
             faceRightState = false;
             marioSprite.flipX = true;
+            if (marioBody.linearVelocity.x > 0.1f)
+                marioAnimator.SetTrigger("onSkid");
         }
 
         if (Input.GetKeyDown("d") && !faceRightState)
         {
             faceRightState = true;
             marioSprite.flipX = false;
+            if (marioBody.linearVelocity.x < -0.1f)
+                marioAnimator.SetTrigger("onSkid");
         }
-
+        marioAnimator.SetFloat("xSpeed", Mathf.Abs(marioBody.linearVelocity.x));
     }
 
     void OnCollisionEnter2D(Collision2D col)
@@ -88,6 +93,12 @@ public class PlayerMovement : MonoBehaviour
             gameOverCanvas.SetActive(true);
             inGameCanvas.SetActive(false);
             finalScoreText.text = "Score: " + jumpOverGoomba.score.ToString();
+        }
+        if (other.gameObject.CompareTag("Ground") && !onGroundState)
+        {
+            onGroundState = true;
+            // update animator state
+            marioAnimator.SetBool("onGround", onGroundState);
         }
     }
 
@@ -114,6 +125,8 @@ public class PlayerMovement : MonoBehaviour
         {
             marioBody.AddForce(Vector2.up * upSpeed, ForceMode2D.Impulse);
             onGroundState = false;
+            // update animator state
+            marioAnimator.SetBool("onGround", onGroundState);
         }
     }
 }

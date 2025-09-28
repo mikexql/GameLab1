@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: mario-run
+  m_Name: mario-skid
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,13 +21,9 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -1249745684, guid: f1bde3f95d8d049e59a4208ea4358c51, type: 3}
+      value: {fileID: 357277177, guid: f1bde3f95d8d049e59a4208ea4358c51, type: 3}
     - time: 0.16666667
-      value: {fileID: -1451218401, guid: f1bde3f95d8d049e59a4208ea4358c51, type: 3}
-    - time: 0.33333334
-      value: {fileID: 1578757053, guid: f1bde3f95d8d049e59a4208ea4358c51, type: 3}
-    - time: 0.48333332
-      value: {fileID: -1249745684, guid: f1bde3f95d8d049e59a4208ea4358c51, type: 3}
+      value: {fileID: 357277177, guid: f1bde3f95d8d049e59a4208ea4358c51, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -50,16 +46,14 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -1249745684, guid: f1bde3f95d8d049e59a4208ea4358c51, type: 3}
-    - {fileID: -1451218401, guid: f1bde3f95d8d049e59a4208ea4358c51, type: 3}
-    - {fileID: 1578757053, guid: f1bde3f95d8d049e59a4208ea4358c51, type: 3}
-    - {fileID: -1249745684, guid: f1bde3f95d8d049e59a4208ea4358c51, type: 3}
+    - {fileID: 357277177, guid: f1bde3f95d8d049e59a4208ea4358c51, type: 3}
+    - {fileID: 357277177, guid: f1bde3f95d8d049e59a4208ea4358c51, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.5
+    m_StopTime: 0.18333334
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
