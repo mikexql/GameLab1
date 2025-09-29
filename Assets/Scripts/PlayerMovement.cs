@@ -25,6 +25,8 @@ public class PlayerMovement : MonoBehaviour
     [System.NonSerialized]
     public bool alive = true;
 
+    public Transform gameCamera;
+
     // other methods
 
     public void RestartButtonCallback(int input)
@@ -56,6 +58,7 @@ public class PlayerMovement : MonoBehaviour
 
         marioAnimator.SetTrigger("gameRestart");
         alive = true;
+        gameCamera.position = new Vector3(0.0f, gameCamera.position.y, gameCamera.position.z);
 
     }
     // Start is called before the first frame update
