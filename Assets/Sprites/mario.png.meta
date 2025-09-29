@@ -241,7 +241,7 @@ TextureImporter:
         width: 17
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -263,7 +263,7 @@ TextureImporter:
         width: 14
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -272,6 +272,28 @@ TextureImporter:
       bones: []
       spriteID: 0ac21b595f2583344bf888cf8d3fe4f1
       internalID: 357277177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mario_die
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 158
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1872c1514300934f9ac3a025468a4a4
+      internalID: 1870200689
       vertices: []
       indices: 
       edges: []
@@ -293,6 +315,7 @@ TextureImporter:
       mario_0: -1249745684
       mario_1: -1451218401
       mario_2: 1578757053
+      mario_die: 1870200689
       mario_jump: 286787922
       mario_skid: 357277177
       mario_stand_L: -1407765413
