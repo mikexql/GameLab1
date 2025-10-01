@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6278648101376930671}
   - component: {fileID: 6922910237908903024}
-  - component: {fileID: 6950240447169178230}
-  m_Layer: 0
+  - component: {fileID: 6549991940166071297}
+  m_Layer: 7
   m_Name: pipe-head
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -91,8 +91,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &6950240447169178230
-BoxCollider2D:
+--- !u!60 &6549991940166071297
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -134,6 +134,15 @@ BoxCollider2D:
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
-  m_AutoTiling: 1
-  m_Size: {x: 1.882353, y: 1.882353}
-  m_EdgeRadius: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.9411765, y: 0.9411765}
+      - {x: -0.9476915, y: 0.046557717}
+      - {x: -0.8336904, y: 0.048996747}
+      - {x: -0.83407104, y: -0.94102705}
+      - {x: 0.8271763, y: -0.94769096}
+      - {x: 0.8299177, y: 0.051019035}
+      - {x: 0.93886256, y: 0.04968345}
+      - {x: 0.9411765, y: 0.9411765}
+  m_UseDelaunayMesh: 0

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2536495571929217024}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: pipe-m
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,8 +43,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1995780203633566409}
   - component: {fileID: 8770436290394396884}
-  - component: {fileID: 1612713983769995645}
-  m_Layer: 0
+  - component: {fileID: 3958738873626462508}
+  m_Layer: 7
   m_Name: pipe-head (1)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -124,8 +124,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &1612713983769995645
-BoxCollider2D:
+--- !u!60 &3958738873626462508
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -168,8 +168,17 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.882353, y: 1.882353}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.9411765, y: 0.9411765}
+      - {x: -0.9492995, y: 0.057782948}
+      - {x: -0.8304644, y: 0.055740166}
+      - {x: -0.83261865, y: -0.94032514}
+      - {x: 0.83153474, y: -0.93711585}
+      - {x: 0.8297731, y: 0.054843903}
+      - {x: 0.9432547, y: 0.054375827}
+      - {x: 0.9411765, y: 0.9411765}
+  m_UseDelaunayMesh: 0
 --- !u!1 &7127606146627225967
 GameObject:
   m_ObjectHideFlags: 0
@@ -179,7 +188,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7986169997887171887}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -212,7 +221,7 @@ GameObject:
   - component: {fileID: 4129629813702179454}
   - component: {fileID: 6241317303947111549}
   - component: {fileID: 3630111036583629238}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: pipe-body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -327,7 +336,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.004060775, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -337,5 +346,5 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.882353, y: 0.9411765}
+  m_Size: {x: 1.6630678, y: 0.9411765}
   m_EdgeRadius: 0

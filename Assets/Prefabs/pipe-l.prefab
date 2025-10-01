@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1740360027396727890}
   - component: {fileID: 248339833443914721}
-  - component: {fileID: 7244028526915320486}
-  m_Layer: 0
+  - component: {fileID: 5322797591663393033}
+  m_Layer: 7
   m_Name: pipe-head (1)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -91,8 +91,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &7244028526915320486
-BoxCollider2D:
+--- !u!60 &5322797591663393033
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -135,8 +135,17 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.882353, y: 1.882353}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.9411765, y: 0.9411765}
+      - {x: -0.95271313, y: 0.0661661}
+      - {x: -0.84123695, y: 0.06242003}
+      - {x: -0.8255911, y: -0.93093675}
+      - {x: 0.82967794, y: -0.9450213}
+      - {x: 0.82732004, y: 0.056139804}
+      - {x: 0.94250983, y: 0.053284228}
+      - {x: 0.9411765, y: 0.9411765}
+  m_UseDelaunayMesh: 0
 --- !u!1 &3319119918127324078
 GameObject:
   m_ObjectHideFlags: 0
@@ -148,7 +157,7 @@ GameObject:
   - component: {fileID: 5023766160390160419}
   - component: {fileID: 7025096439539333655}
   - component: {fileID: 4225063580594389407}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: pipe-body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,7 +271,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0019236207, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -272,7 +281,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.882353, y: 0.9411765}
+  m_Size: {x: 1.6555029, y: 0.9411765}
   m_EdgeRadius: 0
 --- !u!1 &4283355962166334276
 GameObject:
@@ -285,7 +294,7 @@ GameObject:
   - component: {fileID: 8400574150820528901}
   - component: {fileID: 3420005037981587759}
   - component: {fileID: 1737206909473362135}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: pipe-body (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -399,7 +408,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0019235909, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -409,7 +418,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.882353, y: 0.9411765}
+  m_Size: {x: 1.6555085, y: 0.9411765}
   m_EdgeRadius: 0
 --- !u!1 &8854222701890281434
 GameObject:
@@ -420,7 +429,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 821083661124549322}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: pipe-l
   m_TagString: Untagged
   m_Icon: {fileID: 0}

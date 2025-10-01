@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6247868398216911868}
   - component: {fileID: 1101692458441945735}
   - component: {fileID: 1186085804760180206}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: qblock
   m_TagString: Ground
   m_Icon: {fileID: 0}
