@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1740360027396727890}
   - component: {fileID: 248339833443914721}
   - component: {fileID: 7244028526915320486}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: pipe-head (1)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 5023766160390160419}
   - component: {fileID: 7025096439539333655}
   - component: {fileID: 4225063580594389407}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: pipe-body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -285,7 +285,7 @@ GameObject:
   - component: {fileID: 8400574150820528901}
   - component: {fileID: 3420005037981587759}
   - component: {fileID: 1737206909473362135}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: pipe-body (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -420,7 +420,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 821083661124549322}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: pipe-l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
