@@ -1457,6 +1457,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -5523010921533776667, guid: 4e9f5705e96a457439520de8d91a3696, type: 3}
+      propertyPath: m_Frequency
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -5523010921533776667, guid: 4e9f5705e96a457439520de8d91a3696, type: 3}
       propertyPath: m_ConnectedAnchor.y
       value: 1
       objectReference: {fileID: 0}
@@ -2269,6 +2273,10 @@ PrefabInstance:
     - target: {fileID: -5523010921533776667, guid: 4e9f5705e96a457439520de8d91a3696, type: 3}
       propertyPath: m_Distance
       value: 1.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: -5523010921533776667, guid: 4e9f5705e96a457439520de8d91a3696, type: 3}
+      propertyPath: m_Frequency
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -5523010921533776667, guid: 4e9f5705e96a457439520de8d91a3696, type: 3}
       propertyPath: m_ConnectedAnchor.y
@@ -3498,6 +3506,10 @@ PrefabInstance:
     - target: {fileID: -5523010921533776667, guid: 4e9f5705e96a457439520de8d91a3696, type: 3}
       propertyPath: m_Distance
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5523010921533776667, guid: 4e9f5705e96a457439520de8d91a3696, type: 3}
+      propertyPath: m_Frequency
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -5523010921533776667, guid: 4e9f5705e96a457439520de8d91a3696, type: 3}
       propertyPath: m_ConnectedAnchor.y
