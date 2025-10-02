@@ -11,6 +11,9 @@ public class Coin : MonoBehaviour
     public AudioSource coinAudio;
     public AudioClip coinCollect;
     public Animator blockAnimator;
+    public SpriteRenderer blockSprite;
+
+    public Sprite blockSpriteCollected;
     [SerializeField] private SpriteRenderer sr;
     [SerializeField] private Sprite defaultSprite;
 
@@ -38,6 +41,7 @@ public class Coin : MonoBehaviour
             coinAudio.PlayOneShot(coinCollect);
             sr.sprite = defaultSprite;
             blockAnimator.enabled = false;
+            blockSprite.sprite = blockSpriteCollected;
         }
     }
 
