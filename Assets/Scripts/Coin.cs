@@ -21,8 +21,6 @@ public class Coin : MonoBehaviour
     {
         coinBody = GetComponent<Rigidbody2D>();
         coinSprite = GetComponent<SpriteRenderer>();
-        coinSprite.enabled = false;
-        coinBody.constraints = RigidbodyConstraints2D.FreezeAll;
     }
 
     void Update()
@@ -31,8 +29,6 @@ public class Coin : MonoBehaviour
         {   
             collected = false;
             Debug.Log("Coin collected!");
-            coinSprite.enabled = true;
-            coinBody.constraints = RigidbodyConstraints2D.None;
             coinAnimator.Play("coin-spin");
             CoinJump();
             coinAudio.PlayOneShot(coinCollect);
