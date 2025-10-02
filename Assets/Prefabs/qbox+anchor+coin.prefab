@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 1208459667950029156}
   - component: {fileID: 1335747100135873067}
   m_Layer: 7
-  m_Name: qbox+anchor
+  m_Name: qbox+anchor+coin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

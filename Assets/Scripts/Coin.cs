@@ -3,6 +3,7 @@ using UnityEngine;
 public class Coin : MonoBehaviour
 {
 
+    public Coin coin;
     private Rigidbody2D coinBody;
     private SpriteRenderer coinSprite;
 
@@ -32,7 +33,6 @@ public class Coin : MonoBehaviour
             Debug.Log("Coin collected!");
             coinSprite.enabled = true;
             coinBody.constraints = RigidbodyConstraints2D.None;
-            coinAnimator.SetTrigger("collected");
             coinAnimator.Play("coin-spin");
             CoinJump();
             coinAudio.PlayOneShot(coinCollect);
