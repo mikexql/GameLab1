@@ -10,6 +10,9 @@ public class Coin : MonoBehaviour
     public Animator coinAnimator;
     public AudioSource coinAudio;
     public AudioClip coinCollect;
+    public Animator blockAnimator;
+    [SerializeField] private SpriteRenderer sr;
+    [SerializeField] private Sprite defaultSprite;
 
     // state
     [System.NonSerialized]
@@ -32,6 +35,8 @@ public class Coin : MonoBehaviour
             coinAnimator.Play("coin-spin");
             CoinJump();
             coinAudio.PlayOneShot(coinCollect);
+            sr.sprite = defaultSprite;
+            blockAnimator.enabled = false;
         }
     }
 
