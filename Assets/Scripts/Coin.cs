@@ -29,9 +29,10 @@ public class Coin : MonoBehaviour
     void Update()
     {
         if (collected)
-        {   
+        {
             collected = false;
             Debug.Log("Coin collected!");
+            sr.enabled = true;
             coinAnimator.Play("coin-spin");
             CoinJump();
             coinAudio.PlayOneShot(coinCollect);
@@ -41,7 +42,7 @@ public class Coin : MonoBehaviour
     }
 
     void CoinJump()
-    {   
+    {
         // Start the kinematic jump animation
         StartCoroutine(KinematicJumpAnimation());
     }
