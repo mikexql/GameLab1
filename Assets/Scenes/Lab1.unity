@@ -1069,7 +1069,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1208459667950029156, guid: 2069ebc59458b3b44a2d1774d314026d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.612
+      value: 0.187
       objectReference: {fileID: 0}
     - target: {fileID: 1208459667950029156, guid: 2069ebc59458b3b44a2d1774d314026d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1107,6 +1107,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: qbox+anchor+coin (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8320666128494858577, guid: 2069ebc59458b3b44a2d1774d314026d, type: 3}
+      propertyPath: blockSprite
+      value: 
+      objectReference: {fileID: 751566863}
+    - target: {fileID: 8320666128494858577, guid: 2069ebc59458b3b44a2d1774d314026d, type: 3}
+      propertyPath: blockSpriteCollected
+      value: 
+      objectReference: {fileID: 1071345390, guid: 82bc45c4496284f4c823d1b837f65ec4, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1248,6 +1256,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 333383787}
   m_CullTransparentMesh: 1
+--- !u!212 &751566863 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7910645049568074612, guid: 2069ebc59458b3b44a2d1774d314026d, type: 3}
+  m_PrefabInstance: {fileID: 330916048}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &759903458
 GameObject:
   m_ObjectHideFlags: 0
@@ -3222,7 +3235,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 847435523147084961, guid: f2bb27d49f301b643a10dbe10fc1121f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.63
+      value: 0.202
       objectReference: {fileID: 0}
     - target: {fileID: 847435523147084961, guid: f2bb27d49f301b643a10dbe10fc1121f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3267,6 +3280,14 @@ PrefabInstance:
     - target: {fileID: 8283713971237748938, guid: f2bb27d49f301b643a10dbe10fc1121f, type: 3}
       propertyPath: m_Name
       value: brick_coin
+      objectReference: {fileID: 0}
+    - target: {fileID: 9046573291544708312, guid: f2bb27d49f301b643a10dbe10fc1121f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9046573291544708312, guid: f2bb27d49f301b643a10dbe10fc1121f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
