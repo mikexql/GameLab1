@@ -759,7 +759,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
   speed: 10
   maxSpeed: 20
-  upSpeed: 5
+  upSpeed: 6
   scoreText: {fileID: 1366697060}
   enemies: {fileID: 1251382499}
   jumpOverGoomba: {fileID: 290328350}
@@ -1069,7 +1069,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1208459667950029156, guid: 2069ebc59458b3b44a2d1774d314026d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.187
+      value: 0.335
       objectReference: {fileID: 0}
     - target: {fileID: 1208459667950029156, guid: 2069ebc59458b3b44a2d1774d314026d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1107,6 +1107,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: qbox+anchor+coin (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8320666128494858577, guid: 2069ebc59458b3b44a2d1774d314026d, type: 3}
+      propertyPath: blockBody
+      value: 
+      objectReference: {fileID: 751566865}
     - target: {fileID: 8320666128494858577, guid: 2069ebc59458b3b44a2d1774d314026d, type: 3}
       propertyPath: blockSprite
       value: 
@@ -1259,6 +1263,11 @@ CanvasRenderer:
 --- !u!212 &751566863 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 7910645049568074612, guid: 2069ebc59458b3b44a2d1774d314026d, type: 3}
+  m_PrefabInstance: {fileID: 330916048}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &751566865 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 6303280802560221022, guid: 2069ebc59458b3b44a2d1774d314026d, type: 3}
   m_PrefabInstance: {fileID: 330916048}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &759903458
@@ -3235,7 +3244,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 847435523147084961, guid: f2bb27d49f301b643a10dbe10fc1121f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.202
+      value: 0.336
       objectReference: {fileID: 0}
     - target: {fileID: 847435523147084961, guid: f2bb27d49f301b643a10dbe10fc1121f, type: 3}
       propertyPath: m_LocalPosition.z

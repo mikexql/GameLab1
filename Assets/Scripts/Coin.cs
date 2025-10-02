@@ -14,6 +14,8 @@ public class Coin : MonoBehaviour
     public SpriteRenderer blockSprite;
 
     public Sprite blockSpriteCollected;
+
+    public Rigidbody2D blockBody;
     [SerializeField] private SpriteRenderer sr;
     [SerializeField] private Sprite defaultSprite;
 
@@ -88,6 +90,7 @@ public class Coin : MonoBehaviour
         // Ensure final position is exact
         transform.position = startPosition;
         Destroy(gameObject, 0.2f); // Delay destruction slightly to allow animation to complete
+        blockBody.bodyType = RigidbodyType2D.Static;
     }
 
 
