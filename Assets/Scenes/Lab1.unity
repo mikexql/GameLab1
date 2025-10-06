@@ -3310,6 +3310,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1770518288558945385, guid: f2bb27d49f301b643a10dbe10fc1121f, type: 3}
+      propertyPath: m_Size.y
+      value: 0.96633506
+      objectReference: {fileID: 0}
+    - target: {fileID: 1770518288558945385, guid: f2bb27d49f301b643a10dbe10fc1121f, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.07140279
+      objectReference: {fileID: 0}
     - target: {fileID: 4765425921418139946, guid: f2bb27d49f301b643a10dbe10fc1121f, type: 3}
       propertyPath: sr
       value: 
@@ -3322,17 +3330,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: brick-1
       objectReference: {fileID: 0}
+    - target: {fileID: 4812317192287548345, guid: f2bb27d49f301b643a10dbe10fc1121f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8283713971237748938, guid: f2bb27d49f301b643a10dbe10fc1121f, type: 3}
       propertyPath: m_Name
       value: brick_coin-1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9046573291544708312, guid: f2bb27d49f301b643a10dbe10fc1121f, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9046573291544708312, guid: f2bb27d49f301b643a10dbe10fc1121f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

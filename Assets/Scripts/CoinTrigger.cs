@@ -10,17 +10,20 @@ public class CoinTester : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("Collided with coin!");
-            Rigidbody2D playerRb = other.GetComponent<Rigidbody2D>();
-
-            // Check if player is moving upward (jumping into coin from below)
-            if (playerRb.linearVelocity.y > 0.1f)
+            
+            // Check if player is hitting from below (same logic as brick_move.cs)
+            Vector2 hitDirection = (Vector2)other.transform.position - (Vector2)transform.position;
+            
+            // If the player is below the coin's center, player is hitting from below
+            if (hitDirection.y < 0)
             {
-                Vector2 collisionDirection = (transform.position - other.transform.position).normalized;
-                if (collisionDirection.y > 0.5f)
-                {
-                    // Player is jumping up into coin from below
-                    coinToTest.collected = true;
-                }
+                // Player is hitting coin from below
+                coinToTest.collected = true;
+                Debug.Log("Coin collected - hit from below");
+            }
+            else
+            {
+                Debug.Log("Coin hit from above/side - no collection");
             }
         }
     }

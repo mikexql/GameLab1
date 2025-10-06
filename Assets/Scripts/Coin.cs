@@ -16,8 +16,6 @@ public class Coin : MonoBehaviour
     public Sprite blockSpriteCollected;
 
     public Rigidbody2D blockBody;
-    [SerializeField] private SpriteRenderer sr;
-    [SerializeField] private Sprite defaultSprite;
 
     // state
     [System.NonSerialized]
@@ -27,8 +25,9 @@ public class Coin : MonoBehaviour
 
     void Start()
     {
-        coinBody = GetComponent<Rigidbody2D>();
-        coinSprite = GetComponent<SpriteRenderer>();
+        coinBody = coin.GetComponent<Rigidbody2D>();
+        coinSprite = coin.GetComponent<SpriteRenderer>();
+        coinSprite.enabled = false;
     }
 
     void Update()
@@ -37,11 +36,10 @@ public class Coin : MonoBehaviour
         {
             collected = false;
             Debug.Log("Coin collected!");
-            sr.enabled = true;
+            coinSprite.enabled = true;
             coinAnimator.Play("coin-spin");
             CoinJump();
             coinAudio.PlayOneShot(coinCollect);
-            sr.sprite = defaultSprite;
             if (blockAnimator != null && blockSprite != null && blockSpriteCollected != null)
             {
                 blockAnimator.enabled = false;
