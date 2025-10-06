@@ -42,8 +42,11 @@ public class Coin : MonoBehaviour
             CoinJump();
             coinAudio.PlayOneShot(coinCollect);
             sr.sprite = defaultSprite;
-            blockAnimator.enabled = false;
-            blockSprite.sprite = blockSpriteCollected;
+            if (blockAnimator != null && blockSprite != null && blockSpriteCollected != null)
+            {
+                blockAnimator.enabled = false;
+                blockSprite.sprite = blockSpriteCollected;
+            }
         }
     }
 
@@ -90,7 +93,10 @@ public class Coin : MonoBehaviour
         // Ensure final position is exact
         transform.position = startPosition;
         Destroy(gameObject, 0.2f); // Delay destruction slightly to allow animation to complete
-        blockBody.bodyType = RigidbodyType2D.Static;
+        if (blockBody != null)
+        {
+            blockBody.bodyType = RigidbodyType2D.Static;
+        }
     }
 
 
