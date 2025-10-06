@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 3850438879258036985}
   - component: {fileID: 5259015897149529956}
   - component: {fileID: 1770518288558945385}
-  - component: {fileID: 3438119304639290407}
   m_Layer: 7
   m_Name: coin
   m_TagString: Untagged
@@ -140,8 +139,9 @@ MonoBehaviour:
   coinAudio: {fileID: 5259015897149529956}
   coinCollect: {fileID: 8300000, guid: d885ffc842af744d89f7d595ffcc176a, type: 3}
   blockAnimator: {fileID: 0}
-  sr: {fileID: 2969801437957070878}
-  defaultSprite: {fileID: -1631620378, guid: 82bc45c4496284f4c823d1b837f65ec4, type: 3}
+  blockSprite: {fileID: 0}
+  blockSpriteCollected: {fileID: 0}
+  blockBody: {fileID: 0}
   Impulse: 2
 --- !u!95 &3850438879258036985
 Animator:
@@ -308,19 +308,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.5882353, y: 0.99913}
   m_EdgeRadius: 0
---- !u!114 &3438119304639290407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 130517822529561286}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a243894add8224645a90387fff779591, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CoinTester
-  coinToTest: {fileID: 4765425921418139946}
 --- !u!1 &4812317192287548345
 GameObject:
   m_ObjectHideFlags: 0
