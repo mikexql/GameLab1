@@ -169,7 +169,7 @@ public partial class @MarioActions: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""0d6ba241-eda8-4823-b8e4-d2ab80de93ef"",
                     ""path"": ""<Keyboard>/space"",
-                    ""interactions"": """",
+                    ""interactions"": ""Hold"",
                     ""processors"": """",
                     ""groups"": "";Keyboard"",
                     ""action"": ""JumpHold"",
@@ -183,7 +183,13 @@ public partial class @MarioActions: IInputActionCollection2, IDisposable
         {
             ""name"": ""Keyboard"",
             ""bindingGroup"": ""Keyboard"",
-            ""devices"": []
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Keyboard>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
         }
     ]
 }");
