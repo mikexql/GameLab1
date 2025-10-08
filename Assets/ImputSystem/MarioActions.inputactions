@@ -32,6 +32,24 @@
                     "processors": "",
                     "interactions": "Hold",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Click",
+                    "type": "Button",
+                    "id": "64cd19b3-9fcb-42f3-bf6b-bb83667c469f",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Point",
+                    "type": "Value",
+                    "id": "b22f0289-6f4b-426d-b99a-57a2e8829c11",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -74,7 +92,7 @@
                     "path": "<Keyboard>/space",
                     "interactions": "Press",
                     "processors": "",
-                    "groups": ";Keyboard",
+                    "groups": "SuperMarioBros",
                     "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -85,21 +103,70 @@
                     "path": "<Keyboard>/space",
                     "interactions": "Hold",
                     "processors": "",
-                    "groups": ";Keyboard",
+                    "groups": "SuperMarioBros",
                     "action": "JumpHold",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fcd4b95f-9b15-449c-ba1e-f52deef09cd6",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "One Modifier",
+                    "id": "2b483e9c-d9b9-4999-b9ec-93c30090c51a",
+                    "path": "OneModifier",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Point",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier",
+                    "id": "deeccfe5-dd21-46fd-915b-0ecac778ed10",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";SuperMarioBros",
+                    "action": "Point",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "binding",
+                    "id": "47bdeb7b-4e7f-4d6c-8b04-561b06583a85",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";SuperMarioBros",
+                    "action": "Point",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }
     ],
     "controlSchemes": [
         {
-            "name": "Keyboard",
-            "bindingGroup": "Keyboard",
+            "name": "SuperMarioBros",
+            "bindingGroup": "SuperMarioBros",
             "devices": [
                 {
                     "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
                     "isOptional": false,
                     "isOR": false
                 }

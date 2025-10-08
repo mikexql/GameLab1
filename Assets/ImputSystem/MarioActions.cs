@@ -118,6 +118,24 @@ public partial class @MarioActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": ""Hold"",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Click"",
+                    ""type"": ""Button"",
+                    ""id"": ""64cd19b3-9fcb-42f3-bf6b-bb83667c469f"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Point"",
+                    ""type"": ""Value"",
+                    ""id"": ""b22f0289-6f4b-426d-b99a-57a2e8829c11"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -160,7 +178,7 @@ public partial class @MarioActions: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": ""Press"",
                     ""processors"": """",
-                    ""groups"": "";Keyboard"",
+                    ""groups"": ""SuperMarioBros"",
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -171,21 +189,70 @@ public partial class @MarioActions: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": ""Hold"",
                     ""processors"": """",
-                    ""groups"": "";Keyboard"",
+                    ""groups"": ""SuperMarioBros"",
                     ""action"": ""JumpHold"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fcd4b95f-9b15-449c-ba1e-f52deef09cd6"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Click"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""One Modifier"",
+                    ""id"": ""2b483e9c-d9b9-4999-b9ec-93c30090c51a"",
+                    ""path"": ""OneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Point"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""deeccfe5-dd21-46fd-915b-0ecac778ed10"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";SuperMarioBros"",
+                    ""action"": ""Point"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""47bdeb7b-4e7f-4d6c-8b04-561b06583a85"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";SuperMarioBros"",
+                    ""action"": ""Point"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
     ],
     ""controlSchemes"": [
         {
-            ""name"": ""Keyboard"",
-            ""bindingGroup"": ""Keyboard"",
+            ""name"": ""SuperMarioBros"",
+            ""bindingGroup"": ""SuperMarioBros"",
             ""devices"": [
                 {
                     ""devicePath"": ""<Keyboard>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                },
+                {
+                    ""devicePath"": ""<Mouse>"",
                     ""isOptional"": false,
                     ""isOR"": false
                 }
@@ -198,6 +265,8 @@ public partial class @MarioActions: IInputActionCollection2, IDisposable
         m_gameplay_Move = m_gameplay.FindAction("Move", throwIfNotFound: true);
         m_gameplay_Jump = m_gameplay.FindAction("Jump", throwIfNotFound: true);
         m_gameplay_JumpHold = m_gameplay.FindAction("JumpHold", throwIfNotFound: true);
+        m_gameplay_Click = m_gameplay.FindAction("Click", throwIfNotFound: true);
+        m_gameplay_Point = m_gameplay.FindAction("Point", throwIfNotFound: true);
     }
 
     ~@MarioActions()
@@ -281,6 +350,8 @@ public partial class @MarioActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_gameplay_Move;
     private readonly InputAction m_gameplay_Jump;
     private readonly InputAction m_gameplay_JumpHold;
+    private readonly InputAction m_gameplay_Click;
+    private readonly InputAction m_gameplay_Point;
     /// <summary>
     /// Provides access to input actions defined in input action map "gameplay".
     /// </summary>
@@ -304,6 +375,14 @@ public partial class @MarioActions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "gameplay/JumpHold".
         /// </summary>
         public InputAction @JumpHold => m_Wrapper.m_gameplay_JumpHold;
+        /// <summary>
+        /// Provides access to the underlying input action "gameplay/Click".
+        /// </summary>
+        public InputAction @Click => m_Wrapper.m_gameplay_Click;
+        /// <summary>
+        /// Provides access to the underlying input action "gameplay/Point".
+        /// </summary>
+        public InputAction @Point => m_Wrapper.m_gameplay_Point;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -339,6 +418,12 @@ public partial class @MarioActions: IInputActionCollection2, IDisposable
             @JumpHold.started += instance.OnJumpHold;
             @JumpHold.performed += instance.OnJumpHold;
             @JumpHold.canceled += instance.OnJumpHold;
+            @Click.started += instance.OnClick;
+            @Click.performed += instance.OnClick;
+            @Click.canceled += instance.OnClick;
+            @Point.started += instance.OnPoint;
+            @Point.performed += instance.OnPoint;
+            @Point.canceled += instance.OnPoint;
         }
 
         /// <summary>
@@ -359,6 +444,12 @@ public partial class @MarioActions: IInputActionCollection2, IDisposable
             @JumpHold.started -= instance.OnJumpHold;
             @JumpHold.performed -= instance.OnJumpHold;
             @JumpHold.canceled -= instance.OnJumpHold;
+            @Click.started -= instance.OnClick;
+            @Click.performed -= instance.OnClick;
+            @Click.canceled -= instance.OnClick;
+            @Point.started -= instance.OnPoint;
+            @Point.performed -= instance.OnPoint;
+            @Point.canceled -= instance.OnPoint;
         }
 
         /// <summary>
@@ -392,17 +483,17 @@ public partial class @MarioActions: IInputActionCollection2, IDisposable
     /// Provides a new <see cref="GameplayActions" /> instance referencing this action map.
     /// </summary>
     public GameplayActions @gameplay => new GameplayActions(this);
-    private int m_KeyboardSchemeIndex = -1;
+    private int m_SuperMarioBrosSchemeIndex = -1;
     /// <summary>
     /// Provides access to the input control scheme.
     /// </summary>
     /// <seealso cref="UnityEngine.InputSystem.InputControlScheme" />
-    public InputControlScheme KeyboardScheme
+    public InputControlScheme SuperMarioBrosScheme
     {
         get
         {
-            if (m_KeyboardSchemeIndex == -1) m_KeyboardSchemeIndex = asset.FindControlSchemeIndex("Keyboard");
-            return asset.controlSchemes[m_KeyboardSchemeIndex];
+            if (m_SuperMarioBrosSchemeIndex == -1) m_SuperMarioBrosSchemeIndex = asset.FindControlSchemeIndex("SuperMarioBros");
+            return asset.controlSchemes[m_SuperMarioBrosSchemeIndex];
         }
     }
     /// <summary>
@@ -433,5 +524,19 @@ public partial class @MarioActions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnJumpHold(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Click" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnClick(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Point" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnPoint(InputAction.CallbackContext context);
     }
 }
