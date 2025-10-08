@@ -22,21 +22,22 @@ public class HUDManager : MonoBehaviour
     }
 
     public void GameStart()
-    {
+    {   
+        Debug.Log("HUD Manager: Game Start!");
         gameOverCanvas.SetActive(false);
         inGameCanvas.SetActive(true);
-        Time.timeScale = 1.0f;
     }
 
     public void SetScore(int score)
-    {
+    {   
+        Debug.Log("HUD Manager: Set Score: " + score);
         scoreText.text = "Score: " + score.ToString();
         finalScoreText.text = "Score: " + score.ToString();
     }
 
     public void GameOver()
-    {
-        Time.timeScale = 0.0f;
+    {   
+        Debug.Log("HUD Manager: Game Over!");
         gameOverCanvas.SetActive(true);
         inGameCanvas.SetActive(false);
     }

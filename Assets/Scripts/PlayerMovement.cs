@@ -19,8 +19,7 @@ public class PlayerMovement : MonoBehaviour
     public float deathImpulse = 15;
 
     //Testing refactoring
-    public GameObject EnemyManager;
-    public GameObject HUDManager;
+    GameManager gameManager;
     // state
     [System.NonSerialized]
     public bool alive = true;
@@ -29,27 +28,14 @@ public class PlayerMovement : MonoBehaviour
 
     // other methods
 
-    public void RestartButtonCallback(int input)
-    {
-        Debug.Log("Restart!");
-        // reset everything
-        ResetGame();
-        // resume time
-        HUDManager.GetComponent<HUDManager>().GameStart();
-    }
-
-    private void ResetGame()
+    public void ResetGame()
     {
         // reset position
         marioBody.transform.position = new Vector3(-1f, -0.056f, 0.0f);
         // reset sprite direction
         faceRightState = true;
         marioSprite.flipX = false;
-        // reset score
-        HUDManager.GetComponent<HUDManager>().SetScore(0);
         // reset Goomba
-        EnemyManager.GetComponent<EnemyManager>().GameRestart();
-        jumpOverGoomba.score = 0;
 
         marioAnimator.SetTrigger("gameRestart");
         alive = true;
@@ -64,6 +50,7 @@ public class PlayerMovement : MonoBehaviour
         marioBody = GetComponent<Rigidbody2D>();
         marioSprite = GetComponent<SpriteRenderer>();
         marioAnimator.SetBool("onGround", onGroundState);
+        gameManager = GameObject.FindGameObjectWithTag("Manager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -168,8 +155,7 @@ public class PlayerMovement : MonoBehaviour
     void GameOverScene()
     {
         //This is used in the animation event
-        HUDManager.GetComponent<HUDManager>().GameOver();
-        HUDManager.GetComponent<HUDManager>().SetScore(jumpOverGoomba.score);
+        gameManager.GameOver();
     }
 
     private bool jumpedState = false;
