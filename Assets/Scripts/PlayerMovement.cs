@@ -6,7 +6,8 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 10;
     public float maxSpeed = 20;
     public float upSpeed = 10;
-    private bool onGroundState = true;
+    [System.NonSerialized]
+    public bool onGroundState = true;
 
     private Rigidbody2D marioBody;
     private SpriteRenderer marioSprite;
@@ -125,37 +126,11 @@ public class PlayerMovement : MonoBehaviour
     // FixedUpdate is called 50 times a second
     void FixedUpdate()
     {
-        if (alive)
-        {
-            float moveHorizontal = Input.GetAxisRaw("Horizontal");
-            if (Mathf.Abs(moveHorizontal) > 0)
-            {
-                Vector2 movement = new Vector2(moveHorizontal, 0);
-                // check if it doesn't go beyond maxSpeed
-                if (marioBody.linearVelocity.magnitude < maxSpeed)
-                    marioBody.AddForce(movement * speed);
-            }
-
-            // stop
-            if (Input.GetKeyUp("a") || Input.GetKeyUp("d"))
-            {
-                // stop
-                marioBody.linearVelocity = Vector2.zero;
-            }
-
-            if (Input.GetKeyDown("space") && onGroundState)
-            {
-                marioBody.AddForce(Vector2.up * upSpeed, ForceMode2D.Impulse);
-                onGroundState = false;
-                // update animator state
-                marioAnimator.SetBool("onGround", onGroundState);
-            }
-        }
+        // Movement logic moved to ActionManager.cs
     }
 
     void PlayJumpSound()
     {
-        // play jump sound
         marioAudio.PlayOneShot(marioAudio.clip);
     }
 
