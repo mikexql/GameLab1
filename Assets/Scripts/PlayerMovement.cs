@@ -17,6 +17,11 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource marioAudio;
     public AudioClip marioDeath;
     public float deathImpulse = 15;
+    // stomp detection thresholds
+    [Tooltip("Minimum downward velocity (negative) required to count as a stomp")]
+    public float stompVelocityThreshold = -2.0f;
+    [Tooltip("Maximum Y difference (playerY - enemyY) allowed to count as a stomp")]
+    public float stompYTolerance = 0.5f;
 
     //Testing refactoring
     GameManager gameManager;
@@ -95,10 +100,35 @@ public class PlayerMovement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            Debug.Log("Collided with goomba!");
-            marioAnimator.Play("mario-die");
-            marioAudio.PlayOneShot(marioDeath);
-            alive = false;
+            // Determine whether the player is stomping the enemy (from above)
+            // We consider it a stomp when the player's vertical velocity is downward enough
+            // AND the player's Y is sufficiently above the enemy's Y (within tolerance).
+            float playerVy = marioBody.linearVelocity.y;
+            float playerY = transform.position.y;
+            float enemyY = other.transform.position.y;
+
+            bool isStomp = (playerVy <= stompVelocityThreshold) && ((playerY - enemyY) > 0f) && ((playerY - enemyY) <= stompYTolerance);
+
+            if (isStomp)
+            {
+                // Stomp: trigger enemy-specific behavior if available, and give a small bounce
+                // Call Mario's stomp handler directly to process the enemy stomp.
+                var stompHandler = GetComponent<StompGoomba>();
+                if (stompHandler != null)
+                {
+                    stompHandler.HandleStomp(other.gameObject);
+                }
+            }
+            else
+            {
+                if (alive)
+                {
+                    Debug.Log("Collided with goomba from side or below - Mario dies");
+                    marioAnimator.Play("mario-die");
+                    marioAudio.PlayOneShot(marioDeath);
+                    alive = false;
+                }
+            }
 
         }
         if (other.gameObject.CompareTag("Ground") && !onGroundState)

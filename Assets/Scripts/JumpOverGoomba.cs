@@ -4,7 +4,6 @@ using UnityEngine;
 public class JumpOverGoomba : MonoBehaviour
 {
     public Transform enemyLocation;
-    public TextMeshProUGUI scoreText;
     private bool onGroundState;
 
     [System.NonSerialized]

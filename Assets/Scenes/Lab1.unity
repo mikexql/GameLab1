@@ -748,6 +748,7 @@ GameObject:
   - component: {fileID: 290328352}
   - component: {fileID: 290328353}
   - component: {fileID: 290328354}
+  - component: {fileID: 290328355}
   m_Layer: 0
   m_Name: Mario
   m_TagString: Player
@@ -775,7 +776,8 @@ MonoBehaviour:
   marioAudio: {fileID: 290328352}
   marioDeath: {fileID: 8300000, guid: 6400db12decfb0846bc0af2dfa4b6286, type: 3}
   deathImpulse: 5
-  HUDManager: {fileID: 426653599}
+  stompVelocityThreshold: -2
+  stompYTolerance: 0.5
   gameCamera: {fileID: 1183708669}
 --- !u!50 &290328346
 Rigidbody2D:
@@ -930,13 +932,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 290328344}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1713bd80812e11e469263d297d79582c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JumpOverGoomba
   enemyLocation: {fileID: 1088788406}
-  scoreText: {fileID: 1366697060}
   boxSize: {x: 0.5, y: 1, z: 0}
   maxDistance: 0
   layerMask:
@@ -1228,6 +1229,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &290328355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 290328344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3615c48bd1c61e7469e8692a963ea6b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StompGoomba
+  stompedSprite: {fileID: -264694494, guid: 82bc45c4496284f4c823d1b837f65ec4, type: 3}
 --- !u!1001 &330916048
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1826,7 +1840,7 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: 0.50022125, y: 0.95805347}
+  - {x: 0.5056896, y: 1.5887275}
   - {x: 0.5, y: 0}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
@@ -3585,7 +3599,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1723376231242572188, guid: cce05306d9b9fe74c83b3614af855cd7, type: 3}
       propertyPath: m_Name
-      value: Goomba
+      value: Goomba-1
       objectReference: {fileID: 0}
     - target: {fileID: 7945351526442420616, guid: cce05306d9b9fe74c83b3614af855cd7, type: 3}
       propertyPath: m_LocalPosition.x

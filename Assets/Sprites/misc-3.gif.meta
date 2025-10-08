@@ -681,7 +681,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -690,6 +690,28 @@ TextureImporter:
       bones: []
       spriteID: ad9a5e245e0b78e4eaeba7fdf0d2981f
       internalID: 1071345390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goomba-flat
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 343
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62bf576ad7477824f8b11e4ea30728a8
+      internalID: -264694494
       vertices: []
       indices: 
       edges: []
@@ -719,6 +741,7 @@ TextureImporter:
       coin-spin-3: -2013614522
       coin-spin-4: -468321744
       goomba-1: -430783617
+      goomba-flat: -264694494
       ground_brown: 173318081
       mushroom: -1527176832
       pipe-body: -1216484485
