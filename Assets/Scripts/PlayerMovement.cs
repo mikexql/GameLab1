@@ -13,7 +13,6 @@ public class PlayerMovement : MonoBehaviour
     private SpriteRenderer marioSprite;
     private bool faceRightState = true;
     public TextMeshProUGUI scoreText;
-    public GameObject enemies;
     public JumpOverGoomba jumpOverGoomba;
     public GameObject gameOverCanvas;
     public GameObject inGameCanvas;
@@ -22,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource marioAudio;
     public AudioClip marioDeath;
     public float deathImpulse = 15;
+    public GameObject EnemyManager;
     // state
     [System.NonSerialized]
     public bool alive = true;
@@ -51,10 +51,7 @@ public class PlayerMovement : MonoBehaviour
         // reset score
         scoreText.text = "Score: 0";
         // reset Goomba
-        foreach (Transform eachChild in enemies.transform)
-        {
-            eachChild.transform.localPosition = eachChild.GetComponent<EnemyMovement>().startPosition;
-        }
+        EnemyManager.GetComponent<EnemyManager>().GameRestart();
         jumpOverGoomba.score = 0;
 
         marioAnimator.SetTrigger("gameRestart");
