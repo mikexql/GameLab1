@@ -12,16 +12,15 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D marioBody;
     private SpriteRenderer marioSprite;
     private bool faceRightState = true;
-    public TextMeshProUGUI scoreText;
     public JumpOverGoomba jumpOverGoomba;
-    public GameObject gameOverCanvas;
-    public GameObject inGameCanvas;
-    public TextMeshProUGUI finalScoreText;
     public Animator marioAnimator;
     public AudioSource marioAudio;
     public AudioClip marioDeath;
     public float deathImpulse = 15;
+
+    //Testing refactoring
     public GameObject EnemyManager;
+    public GameObject HUDManager;
     // state
     [System.NonSerialized]
     public bool alive = true;
@@ -36,9 +35,7 @@ public class PlayerMovement : MonoBehaviour
         // reset everything
         ResetGame();
         // resume time
-        gameOverCanvas.SetActive(false);
-        inGameCanvas.SetActive(true);
-        Time.timeScale = 1.0f;
+        HUDManager.GetComponent<HUDManager>().GameStart();
     }
 
     private void ResetGame()
@@ -49,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
         faceRightState = true;
         marioSprite.flipX = false;
         // reset score
-        scoreText.text = "Score: 0";
+        HUDManager.GetComponent<HUDManager>().SetScore(0);
         // reset Goomba
         EnemyManager.GetComponent<EnemyManager>().GameRestart();
         jumpOverGoomba.score = 0;
@@ -170,10 +167,9 @@ public class PlayerMovement : MonoBehaviour
 
     void GameOverScene()
     {
-        Time.timeScale = 0.0f;
-        gameOverCanvas.SetActive(true);
-        inGameCanvas.SetActive(false);
-        finalScoreText.text = "Score: " + jumpOverGoomba.score.ToString();
+        //This is used in the animation event
+        HUDManager.GetComponent<HUDManager>().GameOver();
+        HUDManager.GetComponent<HUDManager>().SetScore(jumpOverGoomba.score);
     }
 
     private bool jumpedState = false;

@@ -770,16 +770,13 @@ MonoBehaviour:
   speed: 10
   maxSpeed: 20
   upSpeed: 6
-  scoreText: {fileID: 1366697060}
   jumpOverGoomba: {fileID: 290328350}
-  gameOverCanvas: {fileID: 8753771}
-  inGameCanvas: {fileID: 1236923546}
-  finalScoreText: {fileID: 333383789}
   marioAnimator: {fileID: 290328351}
   marioAudio: {fileID: 290328352}
   marioDeath: {fileID: 8300000, guid: 6400db12decfb0846bc0af2dfa4b6286, type: 3}
   deathImpulse: 5
   EnemyManager: {fileID: 1251382499}
+  HUDManager: {fileID: 426653599}
   gameCamera: {fileID: 1183708669}
 --- !u!50 &290328346
 Rigidbody2D:
@@ -1445,6 +1442,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 333383787}
   m_CullTransparentMesh: 1
+--- !u!1 &426653599
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 426653601}
+  - component: {fileID: 426653600}
+  m_Layer: 0
+  m_Name: HUD Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &426653600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 426653599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22da693d10a66a04eaf6761b27a2b965, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HUDManager
+  gameOverCanvas: {fileID: 8753771}
+  inGameCanvas: {fileID: 1236923546}
+  finalScoreText: {fileID: 333383789}
+  scoreText: {fileID: 1366697060}
+--- !u!4 &426653601
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 426653599}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.32999, y: 0.38913, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &751566863 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 7910645049568074612, guid: 2069ebc59458b3b44a2d1774d314026d, type: 3}
@@ -1712,11 +1757,6 @@ PrefabInstance:
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 2969801437957070878, guid: f2bb27d49f301b643a10dbe10fc1121f, type: 3}
   m_PrefabInstance: {fileID: 1633459698003037164}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &986045730 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1723376231242572188, guid: cce05306d9b9fe74c83b3614af855cd7, type: 3}
-  m_PrefabInstance: {fileID: 56430273056403179}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1026887118
 GameObject:
@@ -2145,9 +2185,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22da693d10a66a04eaf6761b27a2b965, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HUDManager
-  scoreText: {fileID: 333383787}
-  restartButton: {fileID: 1544203501}
-  gameOverPanel: {fileID: 8753771}
+  gameOverCanvas: {fileID: 0}
+  inGameCanvas: {fileID: 0}
+  finalScoreText: {fileID: 0}
+  scoreText: {fileID: 0}
 --- !u!1 &1251382499
 GameObject:
   m_ObjectHideFlags: 0
@@ -2193,7 +2234,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf5751ac2c1854544bc65e6a1dc00fb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyManager
-  enemies: {fileID: 986045730}
 --- !u!1001 &1307487291
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3749,3 +3789,4 @@ SceneRoots:
   - {fileID: 1132584701}
   - {fileID: 8753777}
   - {fileID: 168579993}
+  - {fileID: 426653601}
