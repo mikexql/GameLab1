@@ -5,7 +5,7 @@ public class EnemyMovement : MonoBehaviour
 
     private float originalX;
     private float maxOffset = 2.0f;
-    private float enemyPatroltime = 2.0f;
+    private float enemyPatroltime = 5f;
     private int moveRight = -1;
     private Vector2 velocity;
     private Rigidbody2D enemyBody;

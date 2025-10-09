@@ -1,6 +1,4 @@
-using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -15,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public JumpOverGoomba jumpOverGoomba;
     public Animator marioAnimator;
     public AudioSource marioAudio;
-    public AudioClip marioDeath;
+    public AudioSource marioDeath;
     public float deathImpulse = 15;
     // stomp detection thresholds
     [Tooltip("Minimum downward velocity (negative) required to count as a stomp")]
@@ -125,7 +123,7 @@ public class PlayerMovement : MonoBehaviour
                 {
                     Debug.Log("Collided with goomba from side or below - Mario dies");
                     marioAnimator.Play("mario-die");
-                    marioAudio.PlayOneShot(marioDeath);
+                    marioDeath.PlayOneShot(marioDeath.clip);
                     alive = false;
                 }
             }

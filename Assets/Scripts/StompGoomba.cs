@@ -1,10 +1,10 @@
-using TMPro;
 using UnityEngine;
 
 public class StompGoomba : MonoBehaviour
 {
     GameManager gameManager;
     public Sprite stompedSprite;
+    public AudioSource goombaStomp;
     void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("Manager").GetComponent<GameManager>();
@@ -21,7 +21,7 @@ public class StompGoomba : MonoBehaviour
         if (stompedEnemies.Contains(enemy)) return; // already stomped
 
         stompedEnemies.Add(enemy);
-
+        goombaStomp.PlayOneShot(goombaStomp.clip);
         // award one point
         if (gameManager != null)
             gameManager.IncreaseScore(1);
@@ -29,9 +29,9 @@ public class StompGoomba : MonoBehaviour
         var goombaSprite = enemy.GetComponent<SpriteRenderer>();
         if (goombaSprite != null)
         {
-             goombaSprite.sprite = stompedSprite;
+            goombaSprite.sprite = stompedSprite;
         }
-
+        goombaStomp.PlayOneShot(goombaStomp.clip);
         // stop physics
         var rb = enemy.GetComponent<Rigidbody2D>();
         if (rb != null)
